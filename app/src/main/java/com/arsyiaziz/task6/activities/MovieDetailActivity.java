@@ -97,6 +97,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                             .into(ivPoster);
                 } else {
                     Toast.makeText(MovieDetailActivity.this, "An error has occurred", Toast.LENGTH_LONG).show();
+                    finish();
                 }
             }
 

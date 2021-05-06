@@ -8,18 +8,19 @@
     android:layout_height="match_parent">
     <include
         layout="@layout/progress_overlay"/>
+
     <ScrollView
         android:layout_height="match_parent"
         android:layout_width="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:layout_height="match_parent">
             <RelativeLayout
                 android:id="@+id/top_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="10dp">
                 <ImageView
                     android:id="@+id/iv_poster"
                     android:layout_height="300dp"
@@ -30,7 +31,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/iv_poster"
                     android:orientation="vertical">
                     <TextView
@@ -38,7 +39,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/movie_example"
-                        android:textSize="24dp"
+                        android:textSize="32sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:id="@+id/tv_in_production"
@@ -51,6 +52,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:text="Rating"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         />
                     <TextView
@@ -62,6 +64,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:textSize="16sp"
                         android:text="Number of Seasons"
                         android:textStyle="bold"
                         />
@@ -75,6 +78,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:textSize="16sp"
                         android:text="Number of Episodes"
                         android:textStyle="bold"
                         />
@@ -88,14 +92,41 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tv_overview"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/top_layout"
-                android:layout_marginTop="10dp"
-                android:justificationMode="inter_word"
-                android:text="@string/lorem"/>
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="@color/dull_blue">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/tv_overview_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overview"
+                        android:textSize="24sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@id/top_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/tv_overview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        app:layout_constraintTop_toBottomOf="@id/tv_overview_title"
+                        android:justificationMode="inter_word"
+                        android:text="@string/lorem"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

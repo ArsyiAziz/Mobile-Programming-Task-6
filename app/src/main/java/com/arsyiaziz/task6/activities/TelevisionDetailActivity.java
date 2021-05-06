@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.arsyiaziz.task6.R;
 import com.arsyiaziz.task6.misc.Constants;
@@ -27,7 +29,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TelevisionDetailActivity extends AppCompatActivity {
-    private static final String TAG = "TelevisionDetailActivity";
+    private static final String TAG = "TVDetailActivity";
 
     public static final String TELEVISION_ID = "TELEVISION_ID";
     private TextView tvTitle;
@@ -86,12 +88,17 @@ public class TelevisionDetailActivity extends AppCompatActivity {
                                 }
                             })
                             .into(ivPoster);
+                } else {
+                    Toast.makeText(TelevisionDetailActivity.this, "An error has occurred", Toast.LENGTH_LONG).show();
+                    finish();
                 }
             }
 
             @Override
             public void onFailure(Call<TelevisionModel> call, Throwable t) {
-
+                Log.d(TAG,"onFailure: " + t.getMessage());
+                Toast.makeText(TelevisionDetailActivity.this, "An error has occurred", Toast.LENGTH_LONG).show();
+                finish();
             }
         });
     }

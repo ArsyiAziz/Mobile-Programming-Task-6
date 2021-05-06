@@ -1,6 +1,5 @@
 package com.arsyiaziz.task6.networks;
 
-import com.arsyiaziz.task6.models.AiringTodayResponse;
 import com.arsyiaziz.task6.models.NowPlayingResponse;
 import com.arsyiaziz.task6.models.AiringTodayResponse;
 import com.arsyiaziz.task6.models.movie.MovieModel;

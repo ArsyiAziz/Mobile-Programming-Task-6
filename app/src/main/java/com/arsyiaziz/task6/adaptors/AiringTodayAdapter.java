@@ -18,8 +18,8 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class AiringTodayAdapter extends RecyclerView.Adapter<AiringTodayAdapter.ViewHolder> {
-    private List<AiringTodayModel> airingToday;
-    private OnItemClickListener<AiringTodayModel> clickListener;
+    private final List<AiringTodayModel> airingToday;
+    private final OnItemClickListener<AiringTodayModel> clickListener;
 
     public AiringTodayAdapter(List<AiringTodayModel> airingToday, OnItemClickListener<AiringTodayModel> clickListener) {
         this.airingToday = airingToday;
@@ -48,8 +48,8 @@ public class AiringTodayAdapter extends RecyclerView.Adapter<AiringTodayAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private ImageView ivPoster;
-        private TextView tvTitle;
+        private final ImageView ivPoster;
+        private final TextView tvTitle;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

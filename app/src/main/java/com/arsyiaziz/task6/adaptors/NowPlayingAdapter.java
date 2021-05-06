@@ -18,8 +18,8 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.ViewHolder> {
-    private List<NowPlayingModel> nowPlaying;
-    private OnItemClickListener<NowPlayingModel> clickListener;
+    private final List<NowPlayingModel> nowPlaying;
+    private final OnItemClickListener<NowPlayingModel> clickListener;
 
     public NowPlayingAdapter(List<NowPlayingModel> nowPlaying, OnItemClickListener<NowPlayingModel> clickListener) {
         this.nowPlaying = nowPlaying;
@@ -48,8 +48,8 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private ImageView ivPoster;
-        private TextView tvTitle;
+        private final ImageView ivPoster;
+        private final TextView tvTitle;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -16,8 +15,6 @@ import android.widget.Toast;
 
 import com.arsyiaziz.task6.R;
 import com.arsyiaziz.task6.activities.MovieDetailActivity;
-import com.arsyiaziz.task6.activities.TelevisionDetailActivity;
-import com.arsyiaziz.task6.adaptors.AiringTodayAdapter;
 import com.arsyiaziz.task6.adaptors.NowPlayingAdapter;
 import com.arsyiaziz.task6.misc.Constants;
 import com.arsyiaziz.task6.misc.OnItemClickListener;
@@ -47,6 +44,7 @@ public class NowPlayingFragment extends Fragment implements OnItemClickListener<
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_now_playing, container, false);
         progressOverlay = view.findViewById(R.id.progress_overlay);
+        progressOverlay.setVisibility(View.VISIBLE);
         rvNowPlaying = view.findViewById(R.id.rv_now_playing);
         loadData();
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(view.getContext());

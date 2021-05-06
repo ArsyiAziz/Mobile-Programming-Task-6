@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -21,7 +20,6 @@ import com.arsyiaziz.task6.misc.Constants;
 import com.arsyiaziz.task6.misc.OnItemClickListener;
 import com.arsyiaziz.task6.models.AiringTodayModel;
 import com.arsyiaziz.task6.models.AiringTodayResponse;
-import com.arsyiaziz.task6.models.television.TelevisionModel;
 import com.arsyiaziz.task6.networks.MovieApiClient;
 import com.arsyiaziz.task6.networks.MovieApiInterface;
 import com.google.android.flexbox.AlignItems;
@@ -45,6 +43,7 @@ public class AiringTodayFragment extends Fragment implements OnItemClickListener
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_airing_today, container, false);
         progressOverlay = view.findViewById(R.id.progress_overlay);
+        progressOverlay.setVisibility(View.VISIBLE);
         rvAiringToday = view.findViewById(R.id.rv_airing_today);
         loadData();
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(view.getContext());

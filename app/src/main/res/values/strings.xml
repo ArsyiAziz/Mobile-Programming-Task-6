@@ -35,4 +35,16 @@ Nulla lorem est, bibendum ut quam porttitor, ultrices sagittis enim. Etiam bland
     <string name="rating_example">10/10</string>
     <string name="money_example">$100,000</string>
     <string name="in_production">Currently In Production</string>
+    <string name="release_date_example">11 December 2001</string>
+    <string name="rating_title">Rating</string>
+    <string name="runtime_title">Runtime</string>
+    <string name="runtime_example">01:30</string>
+    <string name="budget_title">Budget</string>
+    <string name="revenue_example">Revenue</string>
+    <string name="overview_title">Overview</string>
+    <string name="number_of_seasons_title">Number of Seasons</string>
+    <string name="number_example">10</string>
+    <string name="number_of_episodes_title">Number of Episodes</string>
+    <string name="upcoming_title">Upcoming</string>
+    <string name="placeholder">Placeholder</string>
 </resources>

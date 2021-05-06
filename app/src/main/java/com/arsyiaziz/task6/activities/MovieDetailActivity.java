@@ -10,15 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.arsyiaziz.task6.R;
-import com.arsyiaziz.task6.adaptors.AiringTodayAdapter;
-import com.arsyiaziz.task6.fragments.AiringTodayFragment;
 import com.arsyiaziz.task6.misc.Constants;
-import com.arsyiaziz.task6.models.AiringTodayResponse;
 import com.arsyiaziz.task6.models.movie.MovieModel;
 import com.arsyiaziz.task6.networks.MovieApiClient;
 import com.arsyiaziz.task6.networks.MovieApiInterface;
@@ -27,7 +23,6 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.google.gson.annotations.SerializedName;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,6 +47,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_movie_detail);
         progressOverlay = findViewById(R.id.progress_overlay);
+        progressOverlay.setVisibility(View.VISIBLE);
         tvTitle = findViewById(R.id.tv_title);
         tvRating = findViewById(R.id.tv_rating);
         tvRuntime = findViewById(R.id.tv_runtime);
@@ -113,10 +109,9 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

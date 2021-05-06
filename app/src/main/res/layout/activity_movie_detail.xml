@@ -13,9 +13,8 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:id="@+id/top_layout"
             android:layout_width="match_parent"
@@ -28,12 +27,13 @@
                 android:layout_width="200dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:src="@color/cardview_dark_background"/>
+                android:src="@color/cardview_dark_background"
+                tools:ignore="ContentDescription" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/iv_poster"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/iv_poster"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/tv_title"
@@ -46,14 +46,14 @@
                     android:id="@+id/tv_release_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="11 December 2001"
+                    android:text="@string/release_date_example"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:textSize="16sp"
-                    android:text="Rating"
+                    android:text="@string/rating_title"
                     android:textStyle="bold"
                     />
                 <TextView
@@ -65,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Runtime"
+                    android:text="@string/runtime_title"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     />
@@ -73,12 +73,12 @@
                     android:id="@+id/tv_runtime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1:30"/>
+                    android:text="@string/runtime_example"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Budget"
+                    android:text="@string/budget_title"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     />
@@ -94,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:textSize="16sp"
-                    android:text="Revenue"
+                    android:text="@string/revenue_example"
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/tv_revenue"
@@ -108,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Budget"
+                android:text="@string/budget_title"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -129,7 +129,7 @@
                     android:id="@+id/tv_overview_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Overview"
+                    android:text="@string/overview_title"
                     android:textSize="24sp"
                     android:textColor="@color/white"
                     android:textStyle="bold"

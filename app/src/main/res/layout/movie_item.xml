@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
@@ -14,7 +15,8 @@
                 android:layout_width="150dp"
                 android:layout_height="225dp"
                 android:scaleType="centerCrop"
-                android:src="@color/black"/>
+                android:src="@color/black"
+                tools:ignore="ContentDescription" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.textview.MaterialTextView
@@ -22,7 +24,7 @@
         android:layout_marginTop="5dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="TEST"
+        android:text="@string/placeholder"
         android:textAlignment="center"
         android:lines="2"
         android:textAppearance="?attr/textAppearanceHeadline6"

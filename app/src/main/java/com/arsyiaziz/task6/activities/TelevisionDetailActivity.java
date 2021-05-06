@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -14,7 +15,6 @@ import android.widget.Toast;
 
 import com.arsyiaziz.task6.R;
 import com.arsyiaziz.task6.misc.Constants;
-import com.arsyiaziz.task6.models.movie.MovieModel;
 import com.arsyiaziz.task6.models.television.TelevisionModel;
 import com.arsyiaziz.task6.networks.MovieApiClient;
 import com.arsyiaziz.task6.networks.MovieApiInterface;
@@ -23,6 +23,8 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,6 +49,7 @@ public class TelevisionDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_television_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         progressOverlay = findViewById(R.id.progress_overlay);
+        progressOverlay.setVisibility(View.VISIBLE);
         tvTitle = findViewById(R.id.tv_title);
         tvRating = findViewById(R.id.tv_rating);
         tvInProduction = findViewById(R.id.tv_in_production);
@@ -101,6 +104,15 @@ public class TelevisionDetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setActionBarTitle(String title) {

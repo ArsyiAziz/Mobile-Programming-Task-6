@@ -1,66 +1,91 @@
 package com.arsyiaziz.task6.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.arsyiaziz.task6.R;
+import com.arsyiaziz.task6.activities.TelevisionDetailActivity;
+import com.arsyiaziz.task6.adaptors.AiringTodayAdapter;
+import com.arsyiaziz.task6.misc.Constants;
+import com.arsyiaziz.task6.misc.OnItemClickListener;
+import com.arsyiaziz.task6.models.AiringTodayModel;
+import com.arsyiaziz.task6.models.AiringTodayResponse;
+import com.arsyiaziz.task6.models.television.TelevisionModel;
+import com.arsyiaziz.task6.networks.MovieApiClient;
+import com.arsyiaziz.task6.networks.MovieApiInterface;
+import com.google.android.flexbox.AlignItems;
+import com.google.android.flexbox.FlexDirection;
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
+import com.google.android.flexbox.JustifyContent;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AiringTodayFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class AiringTodayFragment extends Fragment {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public AiringTodayFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AiringTodayFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AiringTodayFragment newInstance(String param1, String param2) {
-        AiringTodayFragment fragment = new AiringTodayFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+public class AiringTodayFragment extends Fragment implements OnItemClickListener<AiringTodayModel> {
+    private static final String TAG = "AiringTodayFragment";
+    private RecyclerView rvAiringToday;
+    private AiringTodayAdapter airingTodayAdapter;
+    private FrameLayout progressOverlay;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_airing_today, container, false);
+        View view =  inflater.inflate(R.layout.fragment_airing_today, container, false);
+        progressOverlay = view.findViewById(R.id.progress_overlay);
+        rvAiringToday = view.findViewById(R.id.rv_airing_today);
+        loadData();
+        FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(view.getContext());
+        layoutManager.setFlexDirection(FlexDirection.ROW);
+        layoutManager.setFlexWrap(FlexWrap.WRAP);
+        layoutManager.setAlignItems(AlignItems.FLEX_START);
+        layoutManager.setJustifyContent(JustifyContent.CENTER);
+        rvAiringToday.setLayoutManager(layoutManager);
+        return view;
+    }
+
+    private void loadData() {
+        MovieApiInterface movieApiInterface = MovieApiClient.getRetrofit()
+                .create(MovieApiInterface.class);
+        Call<AiringTodayResponse> airingTodayResponseCall = movieApiInterface
+                .getAiringToday(Constants.API_KEY);
+        airingTodayResponseCall.enqueue(new Callback<AiringTodayResponse>() {
+            @Override
+            public void onResponse(Call<AiringTodayResponse> call, Response<AiringTodayResponse> response) {
+                if (response.isSuccessful() && response.body().getGetAiringToday() != null) {
+                    airingTodayAdapter = new AiringTodayAdapter(response.body().getGetAiringToday(), AiringTodayFragment.this);
+                    rvAiringToday.setAdapter(airingTodayAdapter);
+                    progressOverlay.setVisibility(View.GONE);
+                } else {
+                    Toast.makeText(getActivity(), "Failed", Toast.LENGTH_LONG);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<AiringTodayResponse> call, Throwable t) {
+                Log.d(TAG, "onFailure" + t.getLocalizedMessage());
+                Toast.makeText(getActivity(), "Failed" + t.getLocalizedMessage(), Toast.LENGTH_LONG);
+            }
+        });
+    }
+
+    @Override
+    public void onClick(AiringTodayModel airingTodayModel) {
+        Intent intent = new Intent(getActivity(), TelevisionDetailActivity.class);
+        intent.putExtra(TelevisionDetailActivity.TELEVISION_ID, airingTodayModel.getId());
+        startActivity(intent);
     }
 }

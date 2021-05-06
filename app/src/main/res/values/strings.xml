@@ -11,8 +11,28 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus sapien sit amet consequat facilisis. Pellentesque sapien mi, lobortis in consectetur non, sodales eu tellus. Morbi ex orci, laoreet in nibh eu, tempor porta justo. Maecenas auctor tempus luctus. Suspendisse potenti. Sed posuere gravida justo, in pharetra urna sagittis in. Mauris tincidunt laoreet purus sagittis vulputate. Nunc ultricies faucibus orci sit amet tristique. In non lobortis arcu. Nunc sit amet mi at lacus finibus vestibulum non ut mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean viverra auctor posuere. Pellentesque tincidunt quam lectus, id suscipit augue maximus id. Nulla at nisl sit amet nisi faucibus maximus.
 
+Pellentesque id ante id quam sollicitudin commodo nec a libero. In lobortis sapien in sapien maximus efficitur. Praesent vehicula vitae ipsum eu consectetur. Ut vel leo sed felis dignissim condimentum. Ut tristique interdum tortor, ac accumsan enim hendrerit sed. Donec eu arcu quam. Suspendisse ipsum ipsum, consequat id mauris nec, volutpat mattis tellus. Sed sit amet euismod metus. Duis interdum, erat et interdum blandit, urna metus mattis massa, volutpat bibendum mauris mauris quis nibh.
+
+Fusce rhoncus non tellus vulputate aliquet. Donec et suscipit ante. Aliquam vehicula non quam et dapibus. Vestibulum hendrerit erat sed semper porta. Ut eleifend risus non vulputate tincidunt. Donec sed maximus arcu. Nunc sollicitudin nisi vel felis condimentum vestibulum. Nulla vulputate fermentum volutpat.
+
+Nulla facilisi. Etiam tempor, nisl in elementum dictum, lectus augue semper nisi, ut blandit risus diam quis neque. Sed imperdiet augue mauris, tristique porttitor orci consectetur in. Morbi vel ipsum a metus aliquet pulvinar eu eu nisl. Nunc ullamcorper congue elit et bibendum. Nulla cursus nulla non leo scelerisque malesuada. Duis vulputate, elit et tristique viverra, magna tellus pulvinar nisi, eget tincidunt eros lorem vitae ex.
+
+Proin malesuada neque sit amet lectus gravida maximus. Suspendisse facilisis ante dapibus ultrices tincidunt. Vestibulum tristique, sapien sit amet lobortis molestie, tellus ex imperdiet ex, a gravida ipsum odio ut lectus. Sed id eleifend ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pulvinar dolor eget neque porttitor finibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi quis cursus metus. Ut pretium dolor ut velit molestie, eget tempus mi vulputate. Quisque sit amet scelerisque ligula. Mauris vulputate pellentesque dolor non rhoncus. Nulla sollicitudin porttitor mauris non imperdiet. Donec rutrum porta ultrices. Vestibulum et justo non orci vestibulum congue eget ac eros.
+
+Donec lacinia varius lectus. In eget justo quis sapien placerat scelerisque. Fusce vitae elementum mi. Fusce egestas lorem tellus, eleifend suscipit nibh laoreet ut. Vivamus eu ex vitae turpis maximus viverra. Morbi eget est in dolor cursus sodales ut vel odio. Praesent condimentum nulla vel orci tempus blandit. Nulla facilisi. Nulla ut erat id ex elementum euismod eu in nisi. In tincidunt odio eget sapien hendrerit rutrum. Maecenas ut mi blandit, interdum massa sed, varius metus. Nullam euismod nisl at ornare rhoncus. Nulla nec odio metus. Nam imperdiet facilisis laoreet. Proin mollis iaculis imperdiet.
+
+Suspendisse sodales sem in tortor tristique molestie. Pellentesque quis nisi eleifend, convallis metus quis, pulvinar quam. Nulla ante urna, consequat ut lectus eget, tempor mollis tellus. Morbi convallis, tortor ullamcorper molestie commodo, leo felis tristique magna, eget euismod mi arcu eget neque. Aenean vel dapibus nibh. Mauris non elit libero. Nulla ultricies congue nunc, id molestie tellus. Phasellus facilisis purus eu luctus aliquam. Nam pellentesque auctor turpis ac molestie. Aliquam aliquet tortor purus, non laoreet dui condimentum vestibulum.
+
+Nulla lorem est, bibendum ut quam porttitor, ultrices sagittis enim. Etiam blandit, sem id cursus rhoncus, eros turpis mollis nibh, vitae vehicula felis metus auctor magna. Suspendisse potenti. Aliquam malesuada ex a erat dignissim tincidunt. Quisque placerat cursus molestie. Curabitur congue rhoncus eros sit amet maximus. Proin finibus luctus erat, ut volutpat eros faucibus a. Integer sed nisl est. Maecenas dolor mi, fringilla vitae erat a, elementum faucibus diam.
+
+</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_television_detail">TelevisionDetailActivity</string>
+    <string name="movie_example">A Sample Movie</string>
+    <string name="rating_example">10/10</string>
+    <string name="money_example">$100,000</string>
+    <string name="in_production">Currently In Production</string>
 </resources>

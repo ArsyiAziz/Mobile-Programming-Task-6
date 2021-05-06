@@ -14,6 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textStyle="bold"
-        android:text="@string/hello_blank_fragment" />
+        android:textSize="30sp"
+        android:text="Upcoming" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
